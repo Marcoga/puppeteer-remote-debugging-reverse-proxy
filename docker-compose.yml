@@ -1,0 +1,12 @@
+version: "3"
+services:
+  chrome:
+    build: ./chrome
+    ports:
+      - "9222:9222"
+  test-client:
+    build: ./client
+    ports:
+      - "8080:80"
+    links:
+      - "chrome"
